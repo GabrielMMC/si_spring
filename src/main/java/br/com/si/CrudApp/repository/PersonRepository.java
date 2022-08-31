@@ -14,5 +14,9 @@ public interface PersonRepository extends JpaRepository<PersonModel, Long> {
 
     List<PersonModel> findByFullNameContainsIgnoreCaseOrderByFullName(String name);
 
+    List<PersonModel> findDistinctByEmail(String email);
+
+    List<PersonModel> findByFullNameStartsWith(String name);
+
 
 }

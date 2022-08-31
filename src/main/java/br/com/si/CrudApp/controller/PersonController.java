@@ -21,7 +21,7 @@ public class PersonController {
         return service.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public PersonModel save(@RequestBody PersonModel model){
         return service.save(model);
     }
@@ -45,6 +45,16 @@ public class PersonController {
     @GetMapping("/find/name/{name}")
     public List<PersonModel> findByName(@PathVariable("name") String name){
         return service.findByName(name);
+    }
+
+    @GetMapping("/find/start_name/{name}")
+    public List<PersonModel> findByStartName(@PathVariable("name") String name){
+        return service.findByFirstName(name);
+    }
+
+    @GetMapping("/find/email/{email}")
+    public List<PersonModel> findByEmail(@PathVariable("email") String email){
+        return service.findByEmail(email);
     }
 
 }

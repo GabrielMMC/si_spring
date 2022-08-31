@@ -49,4 +49,11 @@ public class PersonService {
         return repository.findByFullNameContainsIgnoreCaseOrderByFullName(name);
     }
 
+    public List<PersonModel> findByEmail(String email) {
+        return repository.findDistinctByEmail(email);
+    }
+
+    public List<PersonModel> findByFirstName(String name) {
+        return repository.findByFullNameStartsWith(name);
+    }
 }
